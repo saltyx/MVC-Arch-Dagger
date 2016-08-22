@@ -1,15 +1,17 @@
-
-package me.shiyan.mvc_arch_dagger.data.source;
+package me.shiyan.mvc_arch_dagger.utils;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import javax.inject.Qualifier;
+import javax.inject.Scope;
 
-@Qualifier
+/**
+ * Created by shiyan on 2016/8/18.
+ */
 @Documented
+@Scope
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Local {
+public @interface FragmentScope {
 
 }

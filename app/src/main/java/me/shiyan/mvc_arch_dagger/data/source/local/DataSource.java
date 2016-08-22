@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import io.realm.Realm;
@@ -17,6 +18,8 @@ import io.realm.RealmResults;
 import me.shiyan.mvc_arch_dagger.bean.BaseNews;
 import me.shiyan.mvc_arch_dagger.data.model.News;
 import me.shiyan.mvc_arch_dagger.data.source.NewsDataSource;
+import me.shiyan.mvc_arch_dagger.utils.Category;
+import me.shiyan.mvc_arch_dagger.utils.Device;
 
 /**
  * Created by shiyan on 2016/8/16.
@@ -27,6 +30,7 @@ public class DataSource implements NewsDataSource {
 
     private RealmHelper mRealmHelper;
 
+    @Inject
     public DataSource(Application context) {
         this.mRealmHelper = new RealmHelper(context);
     }
@@ -70,6 +74,7 @@ public class DataSource implements NewsDataSource {
             callback.onLoaded(toArrayList(results));
         }
     }
+
 
     private ArrayList toArrayList(RealmResults<News> results){
 

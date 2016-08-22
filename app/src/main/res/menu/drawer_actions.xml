@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:checked="true"
+        android:id="@+id/list_item_android"
+        android:icon="@drawable/ic_adb_black_48dp"
+        android:title="Android"></item>
+        <item
+            android:id="@+id/list_item_iphone"
+            android:icon="@drawable/ic_phone_iphone_black_48dp"
+            android:title="iPhone"
+            ></item>
+        <item
+            android:id="@+id/list_item_pc"
+            android:icon="@drawable/ic_computer_black_48dp"
+            android:title="PC"></item>
+        <item
+            android:id="@+id/list_item_ipad"
+            android:icon="@drawable/ic_tablet_mac_black_48dp"
+            android:title="iPad"></item>
+    </group>
+
+</menu>

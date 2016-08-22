@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/tourNews"
+        android:title="@string/tour"></item>
+    <item android:id="@+id/topRatedNews"
+        android:title="@string/top_rated_news"></item>
+    <item android:id="@+id/appNews"
+        android:title="@string/app_news"></item>
+    <item android:id="@+id/gameNews"
+        android:title="@string/game_news"></item>
+    <item android:id="@+id/allNews"
+        android:title="@string/all_news"></item>
+</menu>

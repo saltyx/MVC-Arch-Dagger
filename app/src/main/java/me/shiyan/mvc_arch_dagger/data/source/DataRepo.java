@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import me.shiyan.mvc_arch_dagger.bean.BaseNews;
+import me.shiyan.mvc_arch_dagger.data.source.local.DataSource;
 
 /**
  * Created by shiyan on 2016/8/16.
@@ -17,11 +18,11 @@ import me.shiyan.mvc_arch_dagger.bean.BaseNews;
 @Singleton
 public class DataRepo implements NewsDataSource {
 
-    private final NewsDataSource mDataSource;
+    private final DataSource mDataSource;
 
 
     @Inject
-    DataRepo(@Local NewsDataSource newsDataSource){
+    DataRepo(DataSource newsDataSource){
         mDataSource = newsDataSource;
     }
 

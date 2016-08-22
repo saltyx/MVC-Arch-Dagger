@@ -14,5 +14,5 @@ import me.shiyan.mvc_arch_dagger.data.source.local.DataSource;
 @Component(modules = {DataRepoModule.class, ApplicationModule.class})
 public interface DataRepoComponent {
 
-    DataSource getDataRepo();
+    DataRepo getDataRepo();
 }

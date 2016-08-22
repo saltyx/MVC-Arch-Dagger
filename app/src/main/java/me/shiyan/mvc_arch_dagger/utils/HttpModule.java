@@ -18,5 +18,4 @@ public class HttpModule {
         return new OkHttpClient();
     }
 
-
 }

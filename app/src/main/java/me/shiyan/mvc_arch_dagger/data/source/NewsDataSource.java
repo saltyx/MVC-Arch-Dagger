@@ -11,6 +11,8 @@ import javax.inject.Named;
 
 import io.realm.RealmObject;
 import me.shiyan.mvc_arch_dagger.bean.BaseNews;
+import me.shiyan.mvc_arch_dagger.utils.Category;
+import me.shiyan.mvc_arch_dagger.utils.Device;
 
 /**
  * Created by shiyan on 2016/8/16.

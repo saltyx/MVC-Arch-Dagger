@@ -1,4 +1,4 @@
-package me.shiyan.mvc_arch_dagger.data.source;
+package me.shiyan.mvc_arch_dagger.data.source.local;
 
 import android.app.Application;
 
@@ -6,19 +6,16 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import me.shiyan.mvc_arch_dagger.data.source.local.DataSource;
 
 /**
- * Created by shiyan on 2016/8/17.
+ * Created by shiyan on 2016/8/18.
  */
 @Module
-public class DataRepoModule {
+public class DataSourceModule {
 
     @Singleton
     @Provides
     DataSource provideDataSource(Application context){
         return new DataSource(context);
     }
-
-
 }
