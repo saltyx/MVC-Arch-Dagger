@@ -74,7 +74,11 @@ public class DataSource implements NewsDataSource {
             callback.onLoaded(toArrayList(results));
         }
     }
+    //此为从网络加载更多信息，不用在Local部分实现
+    @Override
+    public void loadMoreFromRemote(@NonNull Device device, @NonNull Category category, @NonNull String lastId, @NonNull LoadDataCallback<BaseNews> callback) {
 
+    }
 
     private ArrayList toArrayList(RealmResults<News> results){
 

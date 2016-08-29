@@ -37,7 +37,16 @@ final class NewsPresenter implements NewsContract.Presenter {
     }
 
     @Override
-    public void loadFromRemote() {
-
+    public void loadFromRemote(Category category) {
+        switch (category.getAction()){
+            case 4://Game
+                break;
+            case 1://tour
+                break;
+            case 2://top_rated
+                break;
+            case 3://app
+                break;
+        }
     }
 }

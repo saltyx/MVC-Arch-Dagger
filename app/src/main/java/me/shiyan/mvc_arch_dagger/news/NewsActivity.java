@@ -1,28 +1,18 @@
 package me.shiyan.mvc_arch_dagger.news;
 
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.PagerTabStrip;
-import android.support.v4.view.PagerTitleStrip;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import javax.inject.Inject;
 
 import me.shiyan.mvc_arch_dagger.NewsApplication;
 import me.shiyan.mvc_arch_dagger.R;
-import me.shiyan.mvc_arch_dagger.data.source.DaggerDataRepoComponent;
 import me.shiyan.mvc_arch_dagger.utils.ActivityUtils;
 import me.shiyan.mvc_arch_dagger.utils.Category;
 import me.shiyan.mvc_arch_dagger.utils.Device;
@@ -34,17 +24,11 @@ public class NewsActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
 
-    private ViewPager mViewPager;
-
-    private PagerTitleStrip mPagerTitleStrip;
-
-    private PagerAdapter mPagerAdapter;
-
     private Log mLog = new Log(getClass().getName());
 
     @Inject NewsPresenter mPresenter;
 
-    Device mCurrentChoosedDevice = Device.ANDROID;//默认设置为Android
+    Device mCurrentChoosedDevice = Device.ANDROID;//默认设置加载为所有
 
     Category mCurrentCategory = Category.TOUR_NEWS;
 
@@ -96,6 +80,9 @@ public class NewsActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()){
+                    case R.id.list_item_all:
+                        mCurrentChoosedDevice = Device.ALL;
+                        break;
                     case R.id.list_item_android:
                         mCurrentChoosedDevice = Device.ANDROID;
                         break;

@@ -49,6 +49,8 @@ public class NewsFragment extends Fragment implements NewsContract.View {
 
     private ListView mDataListView;
 
+    private NewsAdapter mNewsAdapter;
+
     private Log mLog = new Log(getClass().getName());
 
     public NewsFragment() {
@@ -95,16 +97,16 @@ public class NewsFragment extends Fragment implements NewsContract.View {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.tourNews:
-                        mPresenter.loadFromRemote();
+                        mPresenter.loadFromRemote(Category.TOUR_NEWS);
                         break;
                     case R.id.topRatedNews:
-                        mPresenter.loadFromRemote();
+                        mPresenter.loadFromRemote(Category.TOP_RATED_NEWS);
                         break;
                     case R.id.appNews:
-                        mPresenter.loadFromRemote();
+                        mPresenter.loadFromRemote(Category.APP_NEWS);
                         break;
                     case R.id.gameNews:
-                        mPresenter.loadFromRemote();
+                        mPresenter.loadFromRemote(Category.GAME_NEWS);
                         break;
                 }
                 return true;
@@ -134,17 +136,10 @@ public class NewsFragment extends Fragment implements NewsContract.View {
         View root =  inflater.inflate(R.layout.news_frag, container, false);
 
         mDataListView = (ListView) root.findViewById(R.id.listViewNews);
-
         final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) root.findViewById(R.id.refresh_layout);
-        swipeRefreshLayout.setColorSchemeColors(ContextCompat.getColor(getContext(),R.color.colorNewsActBottom));
+        swipeRefreshLayout.setColorSchemeResources(R.color.colorNewsActBottom);
         swipeRefreshLayout.setSize(SwipeRefreshLayout.LARGE);
-        swipeRefreshLayout.setProgressViewEndTarget(true, 100);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                //// TODO: 2016/8/22 从网络刷新数据存到本地 
-            }
-        });
+        swipeRefreshLayout.setProgressViewEndTarget(true, 200);
         setHasOptionsMenu(true);
         return root;
 

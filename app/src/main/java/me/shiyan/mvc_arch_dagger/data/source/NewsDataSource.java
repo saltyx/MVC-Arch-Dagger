@@ -46,4 +46,6 @@ public interface NewsDataSource {
 
     void loadAllNews(@NonNull LoadDataCallback<BaseNews> callback);
 
+    void loadMoreFromRemote(@NonNull Device device,@NonNull Category category
+            ,@NonNull String lastId, @NonNull LoadDataCallback<BaseNews> callback);
 }

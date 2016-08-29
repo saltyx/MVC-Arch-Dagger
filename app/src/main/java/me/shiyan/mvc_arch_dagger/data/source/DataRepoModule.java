@@ -7,6 +7,7 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import me.shiyan.mvc_arch_dagger.data.source.local.DataSource;
+import me.shiyan.mvc_arch_dagger.utils.HttpUtils;
 
 /**
  * Created by shiyan on 2016/8/17.
@@ -20,5 +21,9 @@ public class DataRepoModule {
         return new DataSource(context);
     }
 
-
+    @Singleton
+    @Provides
+    HttpUtils provideHttpUtils(){
+        return new HttpUtils();
+    }
 }

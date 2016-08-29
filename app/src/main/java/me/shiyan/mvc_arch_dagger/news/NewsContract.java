@@ -20,7 +20,7 @@ public interface NewsContract  {
 
     interface Presenter extends BasePresenter{
 
-        void loadFromRemote();
+        void loadFromRemote(Category category);
 
     }
 }

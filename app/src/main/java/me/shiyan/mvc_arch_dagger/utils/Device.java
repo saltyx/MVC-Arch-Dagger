@@ -7,6 +7,7 @@ public enum Device {
     ANDROID,
     IPHONE,
     IPAD,
-    PC
+    PC,
+    ALL
 
 }

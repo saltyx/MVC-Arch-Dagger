@@ -2,7 +2,6 @@ package me.shiyan.mvc_arch_dagger.news;
 
 import dagger.Module;
 import dagger.Provides;
-import me.shiyan.mvc_arch_dagger.utils.Category;
 import me.shiyan.mvc_arch_dagger.utils.Device;
 
 /**
@@ -16,7 +15,7 @@ public class NewsPresenterModule {
     private final Device mDevice;
 
     public NewsPresenterModule(NewsContract.View mView,
-                               Device device) {
+                               Device device){
         this.mView = mView;
         this.mDevice = device;
     }

@@ -3,7 +3,6 @@ package me.shiyan.mvc_arch_dagger;
 import android.app.Application;
 
 import me.shiyan.mvc_arch_dagger.data.source.DaggerDataRepoComponent;
-import me.shiyan.mvc_arch_dagger.data.source.DataRepo;
 import me.shiyan.mvc_arch_dagger.data.source.DataRepoComponent;
 import me.shiyan.mvc_arch_dagger.data.source.DataRepoModule;
 
